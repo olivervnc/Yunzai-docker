@@ -5,10 +5,7 @@ if [[ ! -d config ]] || [[ -z `ls -A config` ]]; then
     cp ${DEFAULT}/config ./ -r
 fi
 
-if [[ ! -d plugins ]] || [[ -z `ls -A plugins` ]]; then
-    echo "copying default plugin folder"
-    cp ${DEFAULT}/plugins ./ -r
-fi
+cp ${DEFAULT}/plugins ./ -r
 
 pnpm install -P
 node app

@@ -10,4 +10,4 @@ if [ -f "./config/config/redis.yaml" ]; then
     echo -e "\n  修改Redis地址完成~  \n"
 fi
 
-mv config plugins ${DEFAULT}
+mv config plugins  ${DEFAULT}
