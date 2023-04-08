@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: olivercwy/Miao-Yunzai
+          images: olivercwy/miao-yunzai
 
       - name: Get current date
         id: date
@@ -35,5 +35,5 @@ jobs:
         with:
           context: ./docker
           push: true
-          tags: ${{ steps.meta.outputs.tags }},olivercwy/Miao-Yunzai:latest,olivercwy/Miao-Yunzai:${{ steps.date.outputs.date }}
+          tags: ${{ steps.meta.outputs.tags }},olivercwy/miao-yunzai:latest,olivercwy/miao-yunzai:${{ steps.date.outputs.date }}
           labels: ${{ steps.meta.outputs.labels }}
