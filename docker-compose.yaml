@@ -1,0 +1,30 @@
+version: "3"
+services:
+  miao-yunzai:
+    container_name: miao-yunzai
+    build:                                                              # 使用 Dockerfile 本地构建
+      context: ./docker
+    restart: always
+    ports:
+      - "50831:50831"                                                 # 映射锅巴插件端口，格式"主机端口:容器内部端口"
+    volumes:
+      - ./app/config:/Yunzai/config:z
+      - ./app/plugins:/Yunzai/plugins:z
+      - ./app/logs:/Yunzai/logs:z
+      - ./app/data:/Yunzai/data:z
+      - ./app/home:/home/yunzai:z
+    depends_on:
+      redis: { condition: service_healthy }
+    stdin_open: true
+    tty: true
+    user: "${DOCKER_USER}"
+
+  redis:
+    container_name: miao-redis
+    image: docker.dragonflydb.io/dragonflydb/dragonfly
+    restart: always
+    volumes:
+      - ./app/database:/data:z
+    ulimits:
+      memlock: -1
+    user: "${DOCKER_USER}"
