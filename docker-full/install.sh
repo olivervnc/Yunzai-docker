@@ -11,6 +11,3 @@ if [ -f "./config/config/redis.yaml" ]; then
 fi
 
 mv config plugins ${DEFAULT}
-
-shopt -s dotglob
-mv ${HOME}/* ${DEFAULT}/home
