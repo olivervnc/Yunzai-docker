@@ -43,5 +43,5 @@ jobs:
         with:
           context: ./docker-full
           push: true
-          tags: olivercwy/miao-yunzai:full-${{ steps.date.outputs.date }},olivercwy/miao-yunzai:${{ steps.date.outputs.date }},olivercwy/miao-yunzai:full-latest,olivercwy/miao-yunzai:latest,
+          tags: olivercwy/miao-yunzai:${{ steps.date.outputs.date }},olivercwy/miao-yunzai:latest,
           labels: ${{ steps.meta.outputs.labels }}
