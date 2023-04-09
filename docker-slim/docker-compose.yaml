@@ -2,9 +2,9 @@ version: "3"
 services:
   miao-yunzai:
     container_name: miao-yunzai
-    # image: olivercwy/miao-yunzai
-    build:
-      context: .
+    image: olivercwy/miao-yunzai:slim-latest
+    # build:
+    #   context: .
     restart: always
     ports:
       - "50831:50831"                                                 # 锅巴插件
