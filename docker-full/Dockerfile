@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
         ttf-wqy-zenhei \
         xfonts-wqy
 
-ENV HOME="/home/yunzai"
+ENV USERNAME="yunzai"
+ENV HOME="/home/$USERNAME"
 ENV YUNZAI="/Yunzai"
 ENV DEFAULT="/default"
 

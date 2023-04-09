@@ -1,4 +1,4 @@
-mkdir -p ${YUNZAI} ${HOME} ${DEFAULT} && chmod a+w ${YUNZAI} ${HOME}
+mkdir -p ${YUNZAI} ${HOME} ${DEFAULT}
 
 git clone --depth=1 -b main https://gitee.com/yoimiya-kokomi/Yunzai-Bot.git ${YUNZAI}
 cd ${YUNZAI} 

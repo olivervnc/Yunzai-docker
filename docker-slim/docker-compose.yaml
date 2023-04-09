@@ -2,16 +2,13 @@ version: "3"
 services:
   miao-yunzai:
     container_name: miao-yunzai
-    build:                                                              # 使用 Dockerfile 本地构建
-      context: ./docker
+    # image: olivercwy/miao-yunzai
+    build:
+      context: .
     restart: always
     ports:
-      - "50831:50831"                                                 # 映射锅巴插件端口，格式"主机端口:容器内部端口"
+      - "50831:50831"                                                 # 锅巴插件
     volumes:
-      - ./app/config:/Yunzai/config:z
-      - ./app/plugins:/Yunzai/plugins:z
-      - ./app/logs:/Yunzai/logs:z
-      - ./app/data:/Yunzai/data:z
       - ./app/home:/home/yunzai:z
     depends_on:
       redis: { condition: service_healthy }

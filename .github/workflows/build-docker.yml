@@ -30,10 +30,18 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
       
-      - name: Build and push Docker image
+      - name: "Build and push Docker image: full"
         uses: docker/build-push-action@v2
         with:
-          context: ./docker
+          context: ./docker-full
           push: true
-          tags: olivercwy/miao-yunzai:${{ steps.date.outputs.date }},olivercwy/miao-yunzai:latest
+          tags: olivercwy/miao-yunzai:${{ steps.date.outputs.date }},olivercwy/miao-yunzai:latest,olivercwy/miao-yunzai:full-${{ steps.date.outputs.date }},olivercwy/miao-yunzai:full-latest
+          labels: ${{ steps.meta.outputs.labels }}
+    
+      - name: "Build and push Docker image: slim"
+        uses: docker/build-push-action@v2
+        with:
+          context: ./docker-slim
+          push: true
+          tags: olivercwy/miao-yunzai:slim-${{ steps.date.outputs.date }},olivercwy/miao-yunzai:slim-latest
           labels: ${{ steps.meta.outputs.labels }}

@@ -1,0 +1,1 @@
+chmod a+w ${HOME} ${YUNZAI} ${DEFAULT} -R
