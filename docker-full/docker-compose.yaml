@@ -5,7 +5,7 @@ services:
     image: olivercwy/miao-yunzai
     restart: always
     ports:
-      # - "50831:50831"                                                 # 锅巴插件
+      - "50831:50831"                                                 # 锅巴插件
     volumes:
       - ./app/config:/Yunzai/config:z
       - ./app/plugins:/Yunzai/plugins:z
@@ -20,10 +20,15 @@ services:
 
   redis:
     container_name: miao-redis
-    image: docker.dragonflydb.io/dragonflydb/dragonfly
+    image: redis:alpine
     restart: always
     volumes:
       - ./app/database:/data:z
     ulimits:
       memlock: -1
     user: "${DOCKER_USER}"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "PING" ]
+      start_period: 10s
+      interval: 5s
+      timeout: 1s
