@@ -1,1 +1,2 @@
-chmod a+wx ${HOME} ${YUNZAI} ${DEFAULT} -R
+chmod a+w ${HOME} ${YUNZAI} ${DEFAULT} -R
+chmod a+x ${HOME} -R

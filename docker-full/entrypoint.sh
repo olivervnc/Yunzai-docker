@@ -9,4 +9,4 @@ fi
 cp ${DEFAULT}/plugins ./ -r
 
 pnpm install -P
-node app
+"$@"

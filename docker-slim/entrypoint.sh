@@ -30,4 +30,4 @@ set -e
 
 cd ${YUNZAI} 
 pnpm install -P
-node app
+"$@"
