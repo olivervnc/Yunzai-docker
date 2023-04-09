@@ -1,3 +1,4 @@
+set -e
 cd ${YUNZAI} 
 
 if [[ ! -d config ]] || [[ -z `ls -A config` ]]; then

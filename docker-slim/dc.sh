@@ -2,5 +2,5 @@
 
 mkdir -p ./app/database ./app/home
 
-docker compose pull
+# docker compose pull
 DOCKER_USER="$(id -u):$(id -g)" docker compose up -d
