@@ -1,4 +1,4 @@
-mkdir -p ${YUNZAI} ${HOME} ${DEFAULT}
+mkdir -p ${YUNZAI} ${HOME} ${DEFAULT}/home
 
 git clone --depth=1 -b main https://gitee.com/yoimiya-kokomi/Yunzai-Bot.git ${YUNZAI}
 cd ${YUNZAI} 
@@ -11,4 +11,6 @@ if [ -f "./config/config/redis.yaml" ]; then
 fi
 
 mv config plugins ${DEFAULT}
-mv ${HOME} ${DEFAULT}/home
+
+shopt -s dotglob
+mv ${HOME}/* ${DEFAULT}/home
