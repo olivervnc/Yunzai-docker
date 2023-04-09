@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         ttf-wqy-zenhei \
         xfonts-wqy
 
-ENV HOME="/home/yunzai"
+ENV HOME="/yunzai"
 ENV YUNZAI="$HOME/Yunzai"
 
 RUN mkdir -p ${HOME} && chmod a+w ${HOME} -R

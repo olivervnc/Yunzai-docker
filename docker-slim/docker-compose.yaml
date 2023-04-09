@@ -9,7 +9,7 @@ services:
     ports:
       - "50831:50831"                                                 # 锅巴插件
     volumes:
-      - ./app/home:/home/yunzai:z
+      - ./app/home:/yunzai:z
     depends_on:
       redis: { condition: service_healthy }
     stdin_open: true
