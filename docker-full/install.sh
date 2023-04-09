@@ -12,7 +12,4 @@ fi
 
 mv config plugins ${DEFAULT}
 mkdir ${DEFAULT}/home
-
-if [[ -d ${HOME} ]] && [[ ! -z `ls -A ${HOME}` ]]; then
-    mv ${HOME}/{,.[^.],..?}* ${DEFAULT}/home
-fi
+mv ${HOME}/. ${DEFAULT}/home

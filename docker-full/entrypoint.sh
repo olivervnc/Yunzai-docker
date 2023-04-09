@@ -1,8 +1,6 @@
 if [[ ! -d ${HOME} ]] || [[ -z `ls -A ${HOME}` ]]; then
-    if [[ -d ${DEFAULT}/home ]] && [[ ! -z `ls -A ${DEFAULT}/home` ]]; then
-        echo "copying default home folder"
-        cp ${DEFAULT}/home/{,.[^.],..?}* ${HOME} -r
-    fi
+    echo "copying default home folder"
+    cp ${DEFAULT}/home/. ${HOME} -r
 fi
 
 cd ${YUNZAI} 
