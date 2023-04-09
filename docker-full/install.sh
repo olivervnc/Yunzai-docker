@@ -12,5 +12,5 @@ fi
 
 mv config plugins ${DEFAULT}
 
-shopt -s dotglob
-mv ${HOME}/* ${DEFAULT}/home
+# shopt -s dotglob
+# mv ${HOME}/* ${DEFAULT}/home
