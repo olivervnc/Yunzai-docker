@@ -1,6 +1,7 @@
 if [[ ! -d ${HOME} ]] || [[ -z `ls -A ${HOME}` ]]; then
     echo "copying default home folder"
-    cp ${DEFAULT}/home/. ${HOME} -r
+    shopt -s dotglob
+    cp ${DEFAULT}/home/* ${HOME} -r
 fi
 
 cd ${YUNZAI} 

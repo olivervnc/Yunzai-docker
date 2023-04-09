@@ -11,5 +11,4 @@ if [ -f "./config/config/redis.yaml" ]; then
 fi
 
 mv config plugins ${DEFAULT}
-mkdir ${DEFAULT}/home
-mv ${HOME}/. ${DEFAULT}/home
+mv ${HOME} ${DEFAULT}/home
