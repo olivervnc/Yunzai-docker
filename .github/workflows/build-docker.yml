@@ -47,3 +47,5 @@ jobs:
           push: true
           tags: olivercwy/miao-yunzai:${{ steps.date.outputs.date }},olivercwy/miao-yunzai:latest,
           labels: ${{ steps.meta.outputs.labels }}
+
+      - uses: gautamkrishnar/keepalive-workflow@v
